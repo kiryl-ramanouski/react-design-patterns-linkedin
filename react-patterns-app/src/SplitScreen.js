@@ -9,7 +9,7 @@ const Pane = styled.div`
   flex: 1;
 `;
 
-export const SplitScreen = (left: Left, right: Right) => {
+const SplitScreen = ({ left: Left, right: Right }) => {
   return (
     <Container>
       <Pane>
@@ -21,3 +21,5 @@ export const SplitScreen = (left: Left, right: Right) => {
     </Container>
   );
 };
+
+export default SplitScreen;
