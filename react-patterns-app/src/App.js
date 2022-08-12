@@ -4,6 +4,8 @@ import React from 'react';
 import { RegularList } from './RegularList';
 import { SmallPersonListItem } from './people/SmallPersonListItem';
 import { LargePersonListItem } from './people/LargePersonListItem';
+import { SmallProductListItem } from './products/SmallProductListItem';
+import { LargeProductListItem } from './products/LargeProductListItem';
 
 // Styles
 import './App.css';
@@ -63,6 +65,16 @@ function App() {
         items={people}
         resourceName='person'
         itemComponent={LargePersonListItem}
+      />
+      <RegularList
+        items={products}
+        resourceName='product'
+        itemComponent={SmallProductListItem}
+      />
+      <RegularList
+        items={products}
+        resourceName='product'
+        itemComponent={LargeProductListItem}
       />
     </>
   );
