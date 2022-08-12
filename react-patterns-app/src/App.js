@@ -1,11 +1,6 @@
 import React from 'react';
 
 // Components
-import { RegularList } from './RegularList';
-import { NumberedList } from './NumberedList';
-import { SmallPersonListItem } from './people/SmallPersonListItem';
-import { LargePersonListItem } from './people/LargePersonListItem';
-import { SmallProductListItem } from './products/SmallProductListItem';
 import { LargeProductListItem } from './products/LargeProductListItem';
 
 // Styles
@@ -55,14 +50,7 @@ const products = [
 ];
 
 function App() {
-  return (
-    <>
-      <RegularList items={people} itemComponent={SmallPersonListItem} />
-      <NumberedList items={people} itemComponent={LargePersonListItem} />
-      <RegularList items={products} itemComponent={SmallProductListItem} />
-      <NumberedList items={products} itemComponent={LargeProductListItem} />
-    </>
-  );
+  return <></>;
 }
 
 export default App;
