@@ -1,5 +1,10 @@
 import React from 'react';
 
+// Components
+import { RegularList } from './RegularList';
+import { SmallPersonListItem } from './people/SmallPersonListItem';
+import { LargePersonListItem } from './people/LargePersonListItem';
+
 // Styles
 import './App.css';
 
@@ -47,7 +52,20 @@ const products = [
 ];
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <RegularList
+        items={people}
+        resourceName='person'
+        itemComponent={SmallPersonListItem}
+      />
+      <RegularList
+        items={people}
+        resourceName='person'
+        itemComponent={LargePersonListItem}
+      />
+    </>
+  );
 }
 
 export default App;
