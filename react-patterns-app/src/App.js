@@ -2,6 +2,7 @@ import React from 'react';
 
 // Components
 import { RegularList } from './RegularList';
+import { NumberedList } from './NumberedList';
 import { SmallPersonListItem } from './people/SmallPersonListItem';
 import { LargePersonListItem } from './people/LargePersonListItem';
 import { SmallProductListItem } from './products/SmallProductListItem';
@@ -57,9 +58,9 @@ function App() {
   return (
     <>
       <RegularList items={people} itemComponent={SmallPersonListItem} />
-      <RegularList items={people} itemComponent={LargePersonListItem} />
+      <NumberedList items={people} itemComponent={LargePersonListItem} />
       <RegularList items={products} itemComponent={SmallProductListItem} />
-      <RegularList items={products} itemComponent={LargeProductListItem} />
+      <NumberedList items={products} itemComponent={LargeProductListItem} />
     </>
   );
 }
