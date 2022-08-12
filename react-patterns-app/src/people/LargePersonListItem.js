@@ -1,5 +1,4 @@
-export const LargePersonListItem = ({ person }) => {
-  const { name, age, hairColor, hobbies } = person;
+export const LargePersonListItem = ({ name, age, hairColor, hobbies }) => {
   return (
     <>
       <h3>NameL {name}</h3>

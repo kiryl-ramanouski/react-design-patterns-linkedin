@@ -1,5 +1,4 @@
-export const SmallProductListItem = ({ product }) => {
-  const { name, price } = product;
+export const SmallProductListItem = ({ name, price }) => {
   return (
     <h3>
       {name} - {price}

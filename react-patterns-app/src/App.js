@@ -56,26 +56,10 @@ const products = [
 function App() {
   return (
     <>
-      <RegularList
-        items={people}
-        resourceName='person'
-        itemComponent={SmallPersonListItem}
-      />
-      <RegularList
-        items={people}
-        resourceName='person'
-        itemComponent={LargePersonListItem}
-      />
-      <RegularList
-        items={products}
-        resourceName='product'
-        itemComponent={SmallProductListItem}
-      />
-      <RegularList
-        items={products}
-        resourceName='product'
-        itemComponent={LargeProductListItem}
-      />
+      <RegularList items={people} itemComponent={SmallPersonListItem} />
+      <RegularList items={people} itemComponent={LargePersonListItem} />
+      <RegularList items={products} itemComponent={SmallProductListItem} />
+      <RegularList items={products} itemComponent={LargeProductListItem} />
     </>
   );
 }

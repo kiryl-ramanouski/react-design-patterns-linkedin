@@ -1,5 +1,4 @@
-export const LargeProductListItem = ({ product }) => {
-  const { name, price, description, rating } = product;
+export const LargeProductListItem = ({ name, price, description, rating }) => {
   return (
     <>
       <h3>{name}</h3>
