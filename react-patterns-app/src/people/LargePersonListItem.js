@@ -7,8 +7,8 @@ export const LargePersonListItem = ({ person }) => {
       <p>Hair Color: {hairColor}</p>
       <h3>Hobbies:</h3>
       <ul>
-        {hobbies.map((item, key) => (
-          <li key={key}>{item}</li>
+        {hobbies.map((item, i) => (
+          <li key={i}>{item}</li>
         ))}
       </ul>
     </>
