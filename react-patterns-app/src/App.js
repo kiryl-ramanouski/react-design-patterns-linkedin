@@ -2,6 +2,7 @@ import React from 'react';
 
 // Components
 import { LargeProductListItem } from './products/LargeProductListItem';
+import { Modal } from './Modal';
 
 // Styles
 import './App.css';
@@ -50,7 +51,13 @@ const products = [
 ];
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <Modal>
+        <LargeProductListItem {...products[0]} />
+      </Modal>
+    </>
+  );
 }
 
 export default App;
