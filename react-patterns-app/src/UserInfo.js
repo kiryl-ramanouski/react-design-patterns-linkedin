@@ -1,7 +1,8 @@
 import React from 'react';
 
-export const UserInfo = ({ name, age, hairColor, hobbies }) => {
-  return (
+export const UserInfo = ({ user }) => {
+  const [name, age, hairColor, hobbies] = user || {};
+  return user ? (
     <>
       <h3>NameL {name}</h3>
       <p>Age: {age} years</p>
@@ -13,5 +14,7 @@ export const UserInfo = ({ name, age, hairColor, hobbies }) => {
         ))}
       </ul>
     </>
+  ) : (
+    <h1>Loading...</h1>
   );
 };
