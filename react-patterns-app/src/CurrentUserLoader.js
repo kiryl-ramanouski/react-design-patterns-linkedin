@@ -13,7 +13,7 @@ export const CurrentUserLoader = ({ children }) => {
 
   return (
     <>
-      {React.Children.map((children, child) => {
+      {React.Children.map(children, (child) => {
         if (React.isValidElement(child)) {
           return React.cloneElement(child, { user });
         }
