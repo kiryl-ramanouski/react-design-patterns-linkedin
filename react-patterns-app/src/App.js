@@ -5,10 +5,9 @@ import axios from 'axios';
 
 // Components
 import { UserInfo } from './UserInfo';
-import { ProductInfo } from './ProductInfo';
 import { DataSource } from './DataSource';
 
-const getDataFunc = (url) => async () => {
+const getServerData = (url) => async () => {
   const response = await axios.get(url);
   return response.data;
 };
@@ -22,7 +21,7 @@ const Text = ({ message }) => <h1>{message}</h1>;
 function App() {
   return (
     <>
-      <DataSource getDataFunc={getDataFunc('/users/123')} resourceName="user">
+      <DataSource getDataFunc={getServerData('/users/123')} resourceName="user">
         <UserInfo />
       </DataSource>
 
