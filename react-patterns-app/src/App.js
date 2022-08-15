@@ -1,22 +1,31 @@
 import React from 'react';
 
-// Styles
-import './App.css';
+// Rest API
+import axios from 'axios';
 
 // Components
-import { ResourceLoader } from './ResourceLoader';
 import { UserInfo } from './UserInfo';
 import { ProductInfo } from './ProductInfo';
+import { DataSource } from './DataSource';
+
+const getDataFunc = (url) => async () => {
+  const response = await axios.get(url);
+  return response.data;
+};
 
 function App() {
   return (
     <>
-      <ResourceLoader resourceUrl='/users/123' resourceName='user'>
+      <DataSource getDataFunc={getDataFunc('/users/123')} resourceName="user">
         <UserInfo />
-      </ResourceLoader>
-      <ResourceLoader resourceUrl='/products/1234' resourceName='product'>
+      </DataSource>
+
+      <DataSource
+        getDataFunc={getDataFunc('/products/1234')}
+        resourceName="product"
+      >
         <ProductInfo />
-      </ResourceLoader>
+      </DataSource>
     </>
   );
 }
