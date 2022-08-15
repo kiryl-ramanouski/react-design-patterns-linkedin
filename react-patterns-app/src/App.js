@@ -4,14 +4,22 @@ import React from 'react';
 import './App.css';
 
 // Components
-import { CurrentUserLoader } from './CurrentUserLoader';
+import { UserLoader } from './UserLoader';
 import { UserInfo } from './UserInfo';
+
+const userIds = [123, 234, 345];
 
 function App() {
   return (
-    <CurrentUserLoader>
-      <UserInfo />
-    </CurrentUserLoader>
+    <>
+      {userIds.map((id) => {
+        return (
+          <UserLoader key={id} userId={id}>
+            <UserInfo />
+          </UserLoader>
+        );
+      })}
+    </>
   );
 }
 
