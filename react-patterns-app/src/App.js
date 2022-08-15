@@ -4,21 +4,19 @@ import React from 'react';
 import './App.css';
 
 // Components
-import { UserLoader } from './UserLoader';
+import { ResourceLoader } from './ResourceLoader';
 import { UserInfo } from './UserInfo';
-
-const userIds = ['123', '234', '345'];
+import { ProductInfo } from './ProductInfo';
 
 function App() {
   return (
     <>
-      {userIds.map((id) => {
-        return (
-          <UserLoader key={id} userId={id}>
-            <UserInfo />
-          </UserLoader>
-        );
-      })}
+      <ResourceLoader resourceUrl='/users/123' resourceName='user'>
+        <UserInfo />
+      </ResourceLoader>
+      <ResourceLoader resourceUrl='/products/1234' resourceName='product'>
+        <ProductInfo />
+      </ResourceLoader>
     </>
   );
 }
