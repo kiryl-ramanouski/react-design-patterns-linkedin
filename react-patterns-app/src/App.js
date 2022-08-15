@@ -7,7 +7,7 @@ import './App.css';
 import { UserLoader } from './UserLoader';
 import { UserInfo } from './UserInfo';
 
-const userIds = [123, 234, 345];
+const userIds = ['123', '234', '345'];
 
 function App() {
   return (
