@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 // Components
-import { UncontrolledOnboardingFlow } from './UncontrolledOnboardingFlow';
+import { ControlledOnboardingFlow } from './ControlledOnboardingFlow';
 
 const StepOne = ({ goToNext }) => (
   <>
@@ -23,8 +23,21 @@ const StepThree = ({ goToNext }) => (
 );
 
 function App() {
+  const [onboardingData, setOnboardingData] = useState({});
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const onNext = (stepData) => {
+    const updatedData = { ...onboardingData, ...stepData };
+    setOnboardingData(updatedData);
+    setCurrentIndex(currentIndex + 1);
+
+    console.log(updatedData);
+  };
+
   return (
-    <UncontrolledOnboardingFlow
+    <ControlledOnboardingFlow
+      currentIndex={currentIndex}
+      onNext={onNext}
       onFinish={(data) => {
         console.log(data);
         alert('Onboarding complete!');
@@ -33,7 +46,7 @@ function App() {
       <StepOne />
       <StepTwo />
       <StepThree />
-    </UncontrolledOnboardingFlow>
+    </ControlledOnboardingFlow>
   );
 }
 
