@@ -21,7 +21,7 @@ let users = [
     hobbies: ['swimming', 'bicycling', 'video games'],
   },
   {
-    id: 234,
+    id: '234',
     name: 'Brenda Smith',
     age: 33,
     hairColor: 'black',
