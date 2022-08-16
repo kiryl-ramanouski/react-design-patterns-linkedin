@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 // Components
-import { ControlledForm } from './ControlledForm';
+import { ControlledModal } from './ControlledModal';
 
 function App() {
+  const [shouldShow, setShouldShow] = useState(false);
+
   return (
     <>
-      <ControlledForm />
+      <ControlledModal
+        shouldShow={shouldShow}
+        onRequestClose={() => setShouldShow(false)}
+      >
+        <h1>Modal Opened</h1>
+      </ControlledModal>
+      <button onClick={() => setShouldShow(true)}>
+        {shouldShow ? 'Hide Modal' : 'Show Modal'}
+      </button>
     </>
   );
 }
