@@ -9,11 +9,7 @@ import { withUser } from './withUser';
 const UserInfoWithLoader = withUser(UserInfo, '234');
 
 function App() {
-  return (
-    <>
-      <UserInfoWithLoader />
-    </>
-  );
+  return <UserInfoWithLoader />;
 }
 
 export default App;

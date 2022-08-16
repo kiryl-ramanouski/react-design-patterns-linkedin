@@ -3,12 +3,12 @@ import React, { useState, useEffect } from 'react';
 // REST Api
 import axios from 'axios';
 
-export const withUser = (Component, userID) => {
+export const withUser = (Component, userId) => {
   return (props) => {
     const [user, setUser] = useState(null);
 
     useEffect(() => async () => {
-      const response = await axios.get(`/users/${userID}`);
+      const response = await axios.get(`/users/${userId}`);
       setUser(response.data);
     });
 
