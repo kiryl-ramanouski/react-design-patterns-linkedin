@@ -6,19 +6,37 @@ import { UncontrolledOnboardingFlow } from './UncontrolledOnboardingFlow';
 const StepOne = ({ goToNext }) => (
   <>
     <h1>Step One</h1>
-    <button onClick={goToNext}>Next</button>
+    <button
+      onClick={() => {
+        goToNext({ name: 'John Doe' });
+      }}
+    >
+      Next
+    </button>
   </>
 );
 const StepTwo = ({ goToNext }) => (
   <>
     <h1>Step Two</h1>
-    <button onClick={goToNext}>Next</button>
+    <button
+      onClick={() => {
+        goToNext({ age: 100 });
+      }}
+    >
+      Next
+    </button>
   </>
 );
 const StepThree = ({ goToNext }) => (
   <>
     <h1>Step Tree</h1>
-    <button onClick={goToNext}>Next</button>
+    <button
+      onClick={() => {
+        goToNext({ hairColor: 'brown' });
+      }}
+    >
+      Next
+    </button>
   </>
 );
 
