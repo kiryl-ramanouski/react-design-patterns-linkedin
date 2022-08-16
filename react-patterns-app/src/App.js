@@ -42,7 +42,12 @@ const StepThree = ({ goToNext }) => (
 
 function App() {
   return (
-    <UncontrolledOnboardingFlow>
+    <UncontrolledOnboardingFlow
+      onFinish={(data) => {
+        console.log(data);
+        alert('Onboarding compete!');
+      }}
+    >
       <StepOne />
       <StepTwo />
       <StepThree />
