@@ -1,10 +1,7 @@
 import React from 'react';
 
-// Components
-import { UserInfoForm } from './UserInfoForm';
-
 function App() {
-  return <UserInfoForm />;
+  return <h1>Your code goes here</h1>;
 }
 
 export default App;
