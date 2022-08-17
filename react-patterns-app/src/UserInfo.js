@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 
 import axios from 'axios';
 
@@ -15,11 +15,13 @@ const localStorageResource = (key) => () => {
 
 export const UserInfo = ({ userId }) => {
   // const user = useResource(`/users/${userId}`);
-  const user = useDataSource(serverResource(`/users/${userId}`));
+  const user = useDataSource(
+    useCallback(() => serverResource(`/users/${userId}`)(), [userId])
+  );
   const { name, age, hairColor, hobbies } = user || {};
 
   const message = useDataSource(localStorageResource('message'));
-  console.log(message); // unknown memory leak...
+  console.log(message);
 
   return user ? (
     <>
