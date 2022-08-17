@@ -6,7 +6,7 @@ export const useCurrentUser = () => {
 
   useEffect(() => {
     (async () => {
-      const response = await axios.get('/current-users/');
+      const response = await axios.get('/current-user/');
       setUser(response.data);
     })();
   }, []);
