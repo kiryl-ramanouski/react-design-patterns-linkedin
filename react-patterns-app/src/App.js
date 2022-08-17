@@ -1,15 +1,10 @@
 import React from 'react';
 
 // Components
-import { UserInfo } from './UserInfo';
-
-// HOC
-import { withUser } from './withUser';
-
-const UserInfoWithLoader = withUser(UserInfo, '234');
+import { UserInfoForm } from './UserInfoForm';
 
 function App() {
-  return <UserInfoWithLoader />;
+  return <UserInfoForm />;
 }
 
 export default App;
