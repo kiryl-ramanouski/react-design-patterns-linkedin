@@ -23,7 +23,7 @@ export const withEditableResource = (Component, resourcePath, resourceName) => {
     };
 
     const onSave = async () => {
-      const response = await axios.post(resourcePath, { resourceName });
+      const response = await axios.post(resourcePath, { [resourceName]: data });
       setOriginalData(response.data);
       setData(response.data);
     };
@@ -34,9 +34,9 @@ export const withEditableResource = (Component, resourcePath, resourceName) => {
 
     const resourceProps = {
       [resourceName]: data,
-      [`onChange${capitalize(resourceName)}`]: { onChange },
-      [`onSave${capitalize(resourceName)}`]: { onSave },
-      [`onReset${capitalize(resourceName)}`]: { onReset },
+      [`onChange${capitalize(resourceName)}`]: onChange,
+      [`onSave${capitalize(resourceName)}`]: onSave,
+      [`onReset${capitalize(resourceName)}`]: onReset,
     };
 
     return <Component {...props} {...resourceProps} />;
