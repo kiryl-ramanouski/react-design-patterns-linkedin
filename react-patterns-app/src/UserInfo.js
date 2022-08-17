@@ -19,7 +19,7 @@ export const UserInfo = ({ userId }) => {
   const { name, age, hairColor, hobbies } = user || {};
 
   const message = useDataSource(localStorageResource('message'));
-  console.log(message);
+  console.log(message); // unknown memory leak...
 
   return user ? (
     <>
